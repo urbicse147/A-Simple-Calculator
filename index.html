@@ -1,0 +1,70 @@
+<html>
+    <head>
+       <title>Simple Calculator</title>
+        <style>
+            button{
+                width: 50px;
+                height: 60px;
+                font-size: 25px;
+            }
+            .equal{
+                height: 120px;
+            }
+            input{
+                width: 220px;
+                font-size: 25px;
+                padding: 4px;
+                font-family: tahoma;
+            }
+        </style>
+    </head>
+    <body>
+        <center>
+            <form name="frm">
+                <input type="text" name="num"></input>
+                
+            </form>
+            <table>
+                <tr>
+                    <td><button value="*" onclick="insert('*')">*</button></td>
+                    <td><button value="/" onclick="insert('/')">/</button></td>
+                </tr>
+                <tr>
+                     <td><button value="9" onclick="insert('9')">9</button></td>
+                     <td><button value="8" onclick="insert('8')">8</button></td>
+                     <td><button value="7" onclick="insert('7')">7</button></td>
+                     <td><button value="+" onclick="insert('+')">+</button></td>
+                </tr>
+                <tr>
+                     <td><button value="6" onclick="insert('6')">6</button></td>
+                     <td><button value="5" onclick="insert('5')">5</button></td>
+                     <td><button value="4" onclick="insert('4')">4</button></td>
+                     <td><button value="-" onclick="insert('-')">-</button></td>
+                </tr>
+                <tr>
+                     <td><button value="3" onclick="insert('3')">3</button></td>
+                     <td><button value="2" onclick="insert('2')">2</button></td>
+                     <td><button value="1" onclick="insert('1')">1</button></td>
+                     <td rowspan="2"><button class="equal" value="+" onclick="equal()">=</button></td>
+                </tr>
+                <tr>
+                     <td><button value="." onclick="insert('.')">.</button></td>
+                     <td><button value="0" onclick="insert('0')">0</button></td>
+                     <td><button onclick="clean()">AC</button></td>
+                </tr>
+                
+            </table>
+        </center>
+        <script>
+            function insert(num){
+                document.frm.num.value+=num;
+            }
+            function equal(){
+                document.frm.num.value=eval(document.frm.num.value);
+            }
+            function clean(){
+                document.frm.num.value="";
+            }
+        </script>
+    </body>
+</html>
